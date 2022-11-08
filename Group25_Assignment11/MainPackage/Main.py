@@ -15,4 +15,9 @@ import requests
 response = requests.get('https://developer.nrel.gov/api/alt-fuel-stations/v1.json?fuel_type=E85,ELEC&state=CA&limit=2&api_key=xY7N9nKVP0JFQt75s6SIqf5mlGARADhMoYBovMtK')
 json_string = response.content
 
-parsed_json = json.loads(json_string) 
+parsed_json = json.loads(json_string) # this is the dictionary
+
+total = int(parsed_json['total_results'])        
+    
+for counts in parsed_json['station_counts']: 
+    print (counts)
