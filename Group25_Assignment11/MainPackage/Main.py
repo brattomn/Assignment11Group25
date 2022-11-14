@@ -17,7 +17,7 @@ json_string = response.content
 
 parsed_json = json.loads(json_string) # this is the dictionary
 
-total = int(parsed_json['total_results'])        
+total = int(parsed_json['total_results'])   #requesting total results from the data
     
-for counts in parsed_json['station_counts']: 
-    print (counts)
+for count in parsed_json['fuel_stations']: #processing the results that shows both access codes
+    print(count) #printing the results of the access codes
